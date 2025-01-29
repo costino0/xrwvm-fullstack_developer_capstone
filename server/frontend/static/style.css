@@ -124,3 +124,70 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
+}
+
+.navbar h2 {
+    color: white; /* White text for the navbar title */
+}
+
+/* Container Styles */
+.container {
+    background-color: white; /* White background for the main content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 2rem; /* Padding for spacing */
+    margin-top: 2rem; /* Space above the container */
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: bold; /* Bold labels for better visibility */
+}
+
+.form-control {
+    border: 1px solid #ced4da; /* Light border for input fields */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+.form-control:focus {
+    border-color: darkturquoise; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 206, 209, 0.5); /* Shadow on focus */
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: darkturquoise; /* Button color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.btn-primary:hover {
+    background-color: #007bff; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    color: white; /* White text for footer */
+    font-size: 12px;
+    padding: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Less padding on smaller screens */
+    }
+}
