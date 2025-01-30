@@ -14,7 +14,28 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
+from .models import CarMake, CarModel
 
+# Get a list of the cars
+from django.http import JsonResponse
+from .models import CarMake, CarModel
+
+def get_cars(request):
+    count = CarMake.objects.count()
+    print("Number of CarMakes:", count)
+    
+    if count == 0:
+        initiate()  # Ensure this function populates the database correctly
+
+    car_models = CarModel.objects.select_related('car_make')
+    print("Number of CarModels:", car_models.count())  # Print the count of car models
+
+    cars = []
+    for car_model in car_models:
+        print(f"CarModel: {car_model.name}, CarMake: {car_model.car_make.name}")  # Debug output
+        cars.append({"CarModel": car_model.name, "CarMake": car_model.car_make.name})
+
+    return JsonResponse({"CarModels": cars})
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
